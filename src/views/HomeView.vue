@@ -1,10 +1,10 @@
 <template>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row py-3">
     <div class="col-md-2 col-sm-12">
       <NavBar />
     </div>
-    <div class="col-md-10 col-sm-12">
+    <div class="col-md-10 col-sm-12 container-rout">
       <router-view />
     </div>
   </div>
@@ -30,5 +30,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+.container-rout{
+  height: calc(100vh - 3rem);
+}
 </style>

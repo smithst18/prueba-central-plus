@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar{
-  height: 100vh;
+  height: 100%;
   width:100%;
 }
 @media (max-width: 750px) { 

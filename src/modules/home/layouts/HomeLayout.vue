@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid">
-    <div class="row min-vh-100">
-      <div class="col-lg-7 min-vh-100  col-md-12 col-sm-12 mb-5 mb-lg-0 mt-5 mt-md-0 ">
+    <div class="row container-main">
+      <div class="col-lg-7 container-rout  col-md-12 col-sm-12 mb-5 mb-lg-0 mt-5 mt-md-0 ">
         <TotalBalance />
         <ShowStadistics />
       </div>
-      <div class="col-lg-5 min-vh-100 col-md-12 col-sm-12">
+      <div class="col-lg-5 container-rout col-md-12 col-sm-12">
         <WelcomeCard />
         <TransactionsList />
       </div>

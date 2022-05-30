@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid rounded d-flex align-items-center justify-content-center mb-4 shadow-sm">
 
-    <div class="card d-flex align-items-center text-center w-75">
+    <div class="card d-flex align-items-center text-center w-100  h-75">
 
       <h3 class="text-secondary">Bienvenido {{user.name}}</h3>
       <p class="text-secondary">Completa tu verificacion de perfil para disfrutar de todas las funciones de central+</p>
-      <button class="btn w-50 rounded-pill btn-secondary text-primary p-3">Verificar Perfil</button>
+      <button class="btn rounded-pill btn-secondary text-primary px-5 py-2">Verificar Perfil</button>
 
     </div>  
 
