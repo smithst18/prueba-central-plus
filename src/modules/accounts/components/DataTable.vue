@@ -7,7 +7,7 @@
         Metodos de Pago
       </span>  
       <button class="ms-auto d-flex align-items-center btn btn-outline-primary p-3" data-bs-toggle="modal" data-bs-target="#addAcountModal">
-        Agregar Cuenta 
+        Agregar
         <i class="fa-solid fa-plus fs-2 ms-2"></i>
       </button>
     </div>

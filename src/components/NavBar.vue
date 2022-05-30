@@ -4,7 +4,7 @@
     id="sidebard">
     
     <div class="navbar-brand mt-md-5 text-center w-75">
-      <img src="@/assets/logo.svg" alt="central +" class="img-fluid d-inline-block">
+      <img src="@/assets/logo.svg" alt="central +" class="img-fluid d-inline-block me-4 me-md-0">
 
       <button type="button" class="navbar-toggler border-0 order-1" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
