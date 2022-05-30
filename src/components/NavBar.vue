@@ -1,10 +1,10 @@
 <template>
   <nav 
-    class="navbar navbar-expand-lg d-flex flex-lg-column  justify-content-center bg-primary shadow-sm rounded " 
+    class="navbar navbar-expand-md d-flex flex-md-column  flex-row justify-content-center bg-primary shadow-sm rounded " 
     id="sidebard">
     
-    <div class="navbar-brand mt-md-5 text-center w-100">
-      <img src="@/assets/logo.svg" alt="central +" class="img-fluid d-none d-lg-inline-block">
+    <div class="navbar-brand mt-md-5 text-center w-75">
+      <img src="@/assets/logo.svg" alt="central +" class="img-fluid d-inline-block">
 
       <button type="button" class="navbar-toggler border-0 order-1" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -12,23 +12,23 @@
     </div>
 
     <div class="collapse navbar-collapse  w-100 order-2 rounded" id="nav">
-      <ul class="navbar-nav d-flex flex-lg-column flex-column mt-5 w-100 text-white text-md-start text-lg-start mb-auto">
-        <li class="nav-item w-100">
+      <ul class="navbar-nav d-flex flex-column mt-5 w-100 text-white mb-auto align-items-center text-center text-md-start">
+        <li class="nav-item w-75">
           <router-link  to="/" class="nav-link">
-            <i class="fa-solid fa-house mx-3"></i> 
+            <i class="fa-solid fa-house me-2"></i> 
             <span>Home</span>
           </router-link>
         </li>
-        <li class="nav-item w-100">
+        <li class="nav-item w-75">
           <router-link to="/home/accounts" class="nav-link">
-            <i class="fa-solid fa-building-columns mx-3"></i>
+            <i class="fa-solid fa-building-columns me-2"></i>
             <span>Metodos de pago</span>
           </router-link>
         </li>
-        <li class="nav-item w-100 d-block d-lg-none">
+        <li class="nav-item w-75 d-block d-lg-none">
           <a href="#" class="nav-link">
-            <i class="fa-solid fa-right-from-bracket mx-3"></i>
-            <span>Cerrar Sesion</span>
+            <i class="fa-solid fa-right-from-bracket me-2"></i>
+            <span class="me-2">Cerrar Sesion</span>
           </a>
         </li>
       </ul>
