@@ -1,0 +1,40 @@
+{
+  "transactions":[
+    {
+      "id":"1",
+      "description":"pago a Jose Vivas",
+      "code":"8ade22fd-f6b6-41df-a0ae-432a6a5b3bc8",
+      "mount":"20",
+      "currency":"$",
+      "date":"21-02-2:06 pm",
+      "icon":"transactionIcon1.svg"
+    },
+    {
+      "id":"2",
+      "description":"recibido de daniela",
+      "code":"8ade22fd-f6b6-41df-a0ae-432a6a5b3bc8",
+      "mount":"203",
+      "currency":"€",
+      "date":"29-02-3:06 pm",
+      "icon":"transactionIcon2.svg"
+    },
+    {
+      "id":"3",
+      "description":"Retiro",
+      "code":"8ade22fd-f6b6-41df-a0ae-432a6a5b3bc8",
+      "mount":"20",
+      "currency":"$",
+      "date":"23-02-5:06 pm",
+      "icon":"transactionIcon3.svg"
+    },
+    {
+      "id":"4",
+      "description":"Recarga",
+      "code":"8ade22fd-f6b6-41df-a0ae-432a6a5b3bc8",
+      "mount":"200",
+      "currency":"$",
+      "date":"21-02-7:06 pm",
+      "icon":"transactionIcon4.svg"
+    }
+  ]
+}

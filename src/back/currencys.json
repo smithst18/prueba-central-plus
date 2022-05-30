@@ -1,0 +1,44 @@
+{
+  "currencys":[
+    { 
+      "id":"1",
+      "name":"Thether",
+      "quantity":20,
+      "symbol":"USDT",
+      "type":"crypto",
+      "img":"currencyIcon2.svg"
+    },
+    {
+      "id":"2",
+      "name":"PEL +",
+      "quantity":2,
+      "symbol":"PEL +",
+      "type":"crypto",
+      "img":"currencyIcon1.svg"
+    },
+    {
+      "id":"3",
+      "name":"Us dolar",
+      "quantity":398.00,
+      "symbol":"$",
+      "type":"national",
+      "img":"currencyIcon5.svg"
+    },
+    {
+      "id":"4",
+      "name":"EURO",
+      "quantity":2458.00,
+      "symbol":"€",
+      "type":"national",
+      "img":"currencyIcon4.svg"
+    },
+    {
+      "id":"5",
+      "name":"Bolivar Digital",
+      "quantity":300.00,
+      "symbol":"Bs",
+      "type":"national",
+      "img":"currencyIcon3.svg"
+    }
+  ]
+}

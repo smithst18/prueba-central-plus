@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div class="container-fluid">
+  <div class="row p-md-3">
+    <div class="col-md-2 col-sm-12">
+      <NavBar />
+    </div>
+    <div class="col-md-10 col-sm-12">
+      <router-view />
+    </div>
   </div>
+</div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { defineAsyncComponent } from 'vue';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    NavBar: defineAsyncComponent ( () => import('@/components/NavBar.vue'))
+  },
+  methods:{
+    ...mapActions(['loadUser'])
+  },
+  created(){
+    this.loadUser();
   }
 }
 </script>
+
+<style lang="scss" scoped>
+</style>

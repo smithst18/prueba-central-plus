@@ -1,0 +1,28 @@
+{
+  "accounts":[
+    { 
+      "id":"1",
+      "alias":"vnzla",
+      "entity":"Banco de Venezuela",
+      "document":"27571718",
+      "acountNumber":"01256522015",
+      "type":"corriente"
+    },
+    { 
+      "id":"2",
+      "alias":"banesco",
+      "entity":"Banesco",
+      "document":"27571718",
+      "acountNumber":"645584555545",
+      "type":"corriente"
+    },
+    { 
+      "id":"3",
+      "alias":"provincial",
+      "entity":"Banco Provincial",
+      "document":"27571718",
+      "acountNumber":"656484646884",
+      "type":"ahorro"
+    }
+  ]
+}
