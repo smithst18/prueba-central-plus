@@ -33,7 +33,7 @@
             <td>{{account.type}}</td>
             <td class="d-flex" v-if="account">
               <EditButton class="me-2" :account="account"/>
-              <DeleteButton :item="account.id"/> 
+              <DeleteButton :id="account.id"/> 
             </td>
           </tr>
         </tbody>
