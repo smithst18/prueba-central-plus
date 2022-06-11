@@ -1,42 +1,47 @@
 <template>
-  <div class="total-container d-flex align-items-center shadow-sm rounded p-4 mb-4">
-    <div class="me-md-5">
-      <div class="d-inline-block d-sm-block">
-        Balance Total
-        <i class="fa-solid fa-eye-slash ms-2"></i>
-        <p class="d-md-block"><span class="">* 1.805,05</span> = 2502</p>
-      </div>
-    </div>
-    <!-- icon -->
-    <div class="me-auto d-flex">
+  <div class="rounded-md shadow-sm bg-secondary h-1/6 lg:p-5 p-3 border">
+    <!-- main grid -->
+    <div class="grid grid-cols-7">
 
-      <div class="mb-2 mx-md-3 mx-lg-4 mx-2 text-center">
-        <button class="icon-container mb-2">
-          <img src="@/assets/pagar.svg" class="img-fluid" alt="pagar central + icon">
-        </button>
-        <span class="d-block">Pagar</span>
+      <!-- balace -->
+      <div class=" h-full col-span-3 flex flex-col justify-center">
+        <div class=" ">
+          <span class="mr-3 text-primary text-xs">Balance total</span>
+          <i class="fa-solid fa-eye-slash ms-2 text-gray-500"></i>
+        </div>
+        <div class=" ">
+          <p class="md:text-2xl text-lg align-middle"> Φ 1,102.84 = <span class="text-xs align-middle"> 230.00 $ </span></p>
+        </div>
       </div>
-
-      <div class="mb-2 mx-md-3 mx-lg-4 mx-2 text-center">
-        <button class="icon-container mb-2">
-          <img src="@/assets/convertir.svg" class="img-fluid" alt="convertir central + icon">
+      <!-- action buttons -->
+      <div class="h-full text-center">
+        <button class="h-14 w-14 bg-primary rounded-full">
+          <img src="@/assets/pagar.svg" class="mx-auto" alt="pagar central + icon">
         </button>
-        <span class="d-block">Convertir</span>
+        <span class="block w-full mt-1 text-xs">Pagar</span>
       </div>
 
-      <div class="mb-2 mx-md-3 mx-lg-4 mx-2 text-center">
-        <button class="icon-container mb-2">
-          <img src="@/assets/retirar.svg" class="img-fluid" alt="retirar central + icon">
+      <div class="h-full text-center ">
+        <button class="h-14 w-14 bg-primary rounded-full">
+          <img src="@/assets/convertir.svg" class="mx-auto" alt="pagar central + icon">
         </button>
-        <span class="d-block">Retirar</span>
+        <span class="block w-full mt-1 text-xs">Convertir</span>
       </div>
 
-      <div class="mb-2 mx-md-3 mx-lg-4 mx-2 text-center">
-        <button class="icon-container mb-2">
-          <img src="@/assets/recargar.svg" class="img-fluid" alt="recar central + icon">
+      <div class="h-full text-center">
+        <button class="h-14 w-14 bg-primary rounded-full">
+          <img src="@/assets/retirar.svg" class="mx-auto" alt="pagar central + icon">
         </button>
-        <span class="d-block">Recargar</span>
+        <span class="block w-full mt-1 text-xs">Retirar</span>
       </div>
+
+      <div class="h-full text-center">
+        <button class="h-14 w-14 bg-primary rounded-full">
+          <img  src="@/assets/recargar.svg" class="mx-auto" alt="pagar central + icon">
+        </button>
+        <span class="block w-full mt-1 text-xs">Recargar</span>
+      </div>
+
     </div>
   </div>
 </template>
@@ -49,15 +54,4 @@ export default {
 
 <style lang="scss" scoped>
 
-  .total-container{
-    height: 20%;
-  }
-
-.icon-container{
-  background-color: #29BB89;
-  border: 0px;
-  border-radius: 100%;
-  width: 3.5rem;
-  height: 3.5rem;
-}
 </style>

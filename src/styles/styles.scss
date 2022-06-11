@@ -1,13 +1,16 @@
-$theme-colors: (
-  "primary":    #29BB89,
-  "secondary":  #FFFFFF,
-  "success":    #198954,
-  "info":       #7723e4,
-  "warning":    #ffc107,
-  "danger":     #dc3545,
-  "light":      #f8f9fa,
-  "dark":       #343a40,
-);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// $theme-colors: (
+//   "primary":    #29BB89,
+//   "secondary":  #FFFFFF,
+//   "success":    #198954,
+//   "info":       #7723e4,
+//   "warning":    #ffc107,
+//   "danger":     #dc3545,
+//   "light":      #f8f9fa,
+//   "dark":       #343a40,
+// );
 .pointer{
   cursor:pointer;
 }
@@ -16,4 +19,3 @@ $theme-colors: (
   font-size: 12px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
-@import 'node_modules/bootstrap/scss/bootstrap.scss';

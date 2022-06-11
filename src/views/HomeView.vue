@@ -1,14 +1,11 @@
 <template>
-<div class="container-fluid">
-  <div class="row py-3">
-    <div class="col-md-2 col-sm-12">
-      <NavBar />
-    </div>
-    <div class="col-md-10 col-sm-12 container-rout">
-      <router-view />
-    </div>
+  <div class="md:flex md:p-3 border border-amber-500 md:h-screen">
+    <NavBar />
+    <!-- <router-view/> -->
+    <div class="border md:ml-5 md:w-full md:flex">
+     <router-view />
+    </div> 
   </div>
-</div>
 </template>
 
 <script>
@@ -31,8 +28,4 @@ export default {
 </script>
 
 <style lang="scss">
-
-.container-rout{
-  height: calc(100vh - 3rem);
-}
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <div class="container-fluid rounded d-flex align-items-center justify-content-center mb-4 shadow-sm">
+  <div class="border">
+    welcome card
+  </div>
+  <!-- <div class="container-fluid rounded d-flex align-items-center justify-content-center mb-4 shadow-sm">
 
     <div class="card d-flex align-items-center text-center w-100  h-75">
 
@@ -9,7 +12,7 @@
 
     </div>  
 
-  </div>
+  </div> -->
 </template>
 
 <script>

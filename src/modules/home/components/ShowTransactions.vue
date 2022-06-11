@@ -1,27 +1,28 @@
 <template>
-  <div class="container-fluid main-container bg-secondary rounded p-4 shadow-sm">
-    <!-- title -->
+  <div class="border">
+    transactions
+  </div>
+  <!-- <div class="container-fluid main-container bg-secondary rounded p-4 shadow-sm">
     <div class="d-flex mb-4">
       <h5>Transacciones Recientes</h5>
       <a href="" class="text-decoration-none text-primary ms-auto">Ver todo</a>
     </div>
-    <!-- transacion item -->
     <div class="container-fluid" v-for="transaction in transactions" :key="transaction.id">
       <TransactionItem :transaction="transaction"/>
     </div>
     <button class="add-button btn btn-primary text-secondary fs-1 shadow-sm">
       +
     </button>
-  </div>
+  </div> -->
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue';
+//import { defineAsyncComponent } from 'vue';
 import { mapState } from 'vuex';
 
 export default {
   components:{
-    TransactionItem: defineAsyncComponent(() => import("../components/TransactionItem.vue")),
+    //TransactionItem: defineAsyncComponent(() => import("../components/TransactionItem.vue")),
   },
   computed:{
     ...mapState('homeModule',['transactions'])

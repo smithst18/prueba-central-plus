@@ -1,17 +1,16 @@
 <template>
-  <div class="container-fluid">
-    <div class="row container-main">
-      <div class="col-lg-7 container-rout  col-md-12 col-sm-12 mb-5 mb-lg-0 mt-5 mt-md-0 ">
-        <TotalBalance />
-        <ShowStadistics />
-      </div>
-      <div class="col-lg-5 container-rout col-md-12 col-sm-12">
-        <WelcomeCard />
-        <TransactionsList />
-      </div>
-    </div>
+
+  <div class="border border-primary md:w-3/5 md:p-0 md:pr-4 p-2">
+    <TotalBalance />
+    <ShowStadistics />
   </div>
+  <div class="border border-primary md:w-2/5 md:p-4 p-2">
+    <WelcomeCard />
+    <TransactionsList />
+  </div>
+
 </template>
+
 <script>
 import { defineAsyncComponent } from 'vue'
 import { mapActions } from 'vuex';
