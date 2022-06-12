@@ -1,11 +1,11 @@
 <template>
 
-  <div class="border border-primary md:w-3/5 md:p-0 md:pr-4 p-2">
-    <TotalBalance />
+  <div class="md:w-3/5 md:p-0 md:pr-3 p-2">
+    <TotalBalance class="mb-3 md:mb-0"/>
     <ShowStadistics />
   </div>
-  <div class="border border-primary md:w-2/5 md:p-4 p-2">
-    <WelcomeCard />
+  <div class="md:w-2/5 md:py-0 md:pl-3 md:pr-0 p-2">
+    <WelcomeCard class="mb-3 md:mb-0"/>
     <TransactionsList />
   </div>
 

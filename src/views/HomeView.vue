@@ -1,8 +1,8 @@
 <template>
-  <div class="md:flex md:p-3 border border-amber-500 md:h-screen">
+  <div class="md:flex md:p-3 md:h-screen">
     <NavBar />
     <!-- <router-view/> -->
-    <div class="border md:ml-5 md:w-full md:flex">
+    <div class="md:ml-5 md:w-full md:flex">
      <router-view />
     </div> 
   </div>

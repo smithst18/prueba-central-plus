@@ -14,24 +14,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "daybook" */'@/views/HomeView.vue'),
     children:[
       {
-        path:'',
-        name:'home',
+        path:'dashboard',
         ...HomeRouter
       },
       {
         path:'accounts',
-        name:'accounts',
         ...AccountRouter
       },
       {
         path:'',
-        redirect:'home',
+        redirect:{name:'dashboard'},
       }
     ]
   },
   {
     path: '/:pathMatch(.*)*',
-    redirect:'/'
+    redirect:{name:'dashboard'}
   },
 ]
 

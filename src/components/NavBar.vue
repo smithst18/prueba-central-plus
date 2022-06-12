@@ -1,9 +1,9 @@
 <template>
   <nav class="md:flex md:flex-col bg-primary text-secondary text-xs md:w-1/5 md:h-full shadow-md md:rounded-lg sticky  top-0">
     <!-- toggle button  + logo -->
-    <div class="md:px-10 md:py-10 md:block p-5 flex items-center">
+    <div class="lg:px-10 md:py-10 md:block p-5 flex items-center">
       
-      <img src="@/assets/logo.svg" alt="central +" class="">
+      <img src="@/assets/logo.svg" alt="central +" class="pointer">
       <div class="mx-auto">
         <i :class="toggleIcon" @click="changeIcon()"></i>
       </div>
@@ -11,21 +11,21 @@
     <!-- links -->
     <div 
       class="md:mb-auto md:mt-16 md:z-auto md:static md:opacity-100 md:pl-0 pl-7  absolute bg-primary w-full left-0 opacity-0 top-[-400px] transition-all ease-out duration-700 md:transition-none" id="collapse">
-        <NavbarLink v-for="link in links" :key="link.name" :link="link" class="my-7 block"/>
+        <NavbarLink v-for="link in links" :key="link.name" :link="link" class="block"/>
     </div>
     <!-- logOut button -->
-    <a class="md:ml-10 md:mb-5 pointer hidden md:block">
+    <a class="md:ml-10 md:mb-5 pointer hidden md:block text-sm">
       Cerrar sesion  
     </a>
     <!-- minicard -->
-    <div class="p-3 hidden md:block">
+    <div class="p-3 hidden lg:block">
       <div class="border flex items-center bg-secondary rounded-lg p-2 ">
         <img src="https://github.com/mdo.png" class="rounded-full h-10 w-10 mr-3">
         <div>
-          <div class="text-black mb-1 ">
+          <div class="text-black mb-1 text-sm">
             {{user.name +' '+ user.lastName}}
           </div>
-          <div class="text-zinc-400">
+          <div class="text-zinc-400 text-xs">
             {{user.email}}
           </div>
         </div>
@@ -42,8 +42,8 @@ export default {
   data(){
     return{
       links:[
-        { to: 'pokemon-list', name:'Home',icon:"fa-solid fa-house" },
-        { to: 'pokemon-about', name:'Metodos de Pago',icon:"fa-solid fa-building-columns"},
+        { to: 'dashboard', name:'Home',icon:"fa-solid fa-house" },
+        { to: 'accounts', name:'Metodos de Pago',icon:"fa-solid fa-building-columns"},
       ],
       toggleIcon:'fa-solid fa-bars md:hidden block text-4xl',
     }

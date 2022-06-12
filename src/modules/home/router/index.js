@@ -1,7 +1,7 @@
 
 export default  {
 
-  name:'home',
+  name:'dashboard',
   
   component: () => import(/* webpackChunkName: "daybook" */'@/modules/home/layouts/HomeLayout.vue'),
   children:[]

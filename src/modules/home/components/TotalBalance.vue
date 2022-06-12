@@ -1,7 +1,7 @@
 <template>
-  <div class="rounded-md shadow-sm bg-secondary h-1/6 lg:p-5 p-3 border">
+  <div class="rounded-lg shadow-sm bg-secondary h-1/6 lg:p-5 p-3 border flex items-center">
     <!-- main grid -->
-    <div class="grid grid-cols-7">
+    <div class="grid grid-cols-7 w-full">
 
       <!-- balace -->
       <div class=" h-full col-span-3 flex flex-col justify-center">
@@ -15,28 +15,28 @@
       </div>
       <!-- action buttons -->
       <div class="h-full text-center">
-        <button class="h-14 w-14 bg-primary rounded-full">
+        <button class="h-14 w-14 bg-primary rounded-full hover:opacity-75">
           <img src="@/assets/pagar.svg" class="mx-auto" alt="pagar central + icon">
         </button>
         <span class="block w-full mt-1 text-xs">Pagar</span>
       </div>
 
       <div class="h-full text-center ">
-        <button class="h-14 w-14 bg-primary rounded-full">
+        <button class="h-14 w-14 bg-primary rounded-full hover:opacity-75">
           <img src="@/assets/convertir.svg" class="mx-auto" alt="pagar central + icon">
         </button>
         <span class="block w-full mt-1 text-xs">Convertir</span>
       </div>
 
       <div class="h-full text-center">
-        <button class="h-14 w-14 bg-primary rounded-full">
+        <button class="h-14 w-14 bg-primary rounded-full hover:opacity-75">
           <img src="@/assets/retirar.svg" class="mx-auto" alt="pagar central + icon">
         </button>
         <span class="block w-full mt-1 text-xs">Retirar</span>
       </div>
 
       <div class="h-full text-center">
-        <button class="h-14 w-14 bg-primary rounded-full">
+        <button class="h-14 w-14 bg-primary rounded-full hover:opacity-75">
           <img  src="@/assets/recargar.svg" class="mx-auto" alt="pagar central + icon">
         </button>
         <span class="block w-full mt-1 text-xs">Recargar</span>
