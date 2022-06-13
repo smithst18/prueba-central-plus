@@ -1,5 +1,14 @@
 <template>
-  <div>
+  <button 
+    @click="deleteItem"
+    class="text-red-600" >
+    <i class="fa-solid fa-trash-can"></i>
+  </button>
+
+  <ModalItem>
+
+  </ModalItem>
+  <!-- <div>
     <button @click="deleteItem" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
       <i class="fa-solid fa-trash-can"></i>
     </button>
@@ -23,10 +32,11 @@
     </div>
 
 
-  </div>
+  </div> -->
 </template>
 
 <script>
+import { defineAsyncComponent } from '@vue/runtime-core';
 import { mapActions } from 'vuex';
 
 export default {
@@ -35,6 +45,14 @@ export default {
     id:{
       type:String,
     },
+  },
+  data(){
+    return{
+      modalActive:true,
+    }
+  },
+  components:{
+     ModalItem:defineAsyncComponent(() => import('./ModalItem.vue')),
   },
   methods:{
     ...mapActions('accountModule',['deleteAccount']),

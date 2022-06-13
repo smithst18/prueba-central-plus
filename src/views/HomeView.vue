@@ -1,5 +1,6 @@
 <template>
   <div class="md:flex md:p-3 md:h-screen">
+    <!-- principal navbar -->
     <NavBar />
     <!-- <router-view/> -->
     <div class="md:ml-5 md:w-full md:flex">
@@ -9,7 +10,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import { defineAsyncComponent } from 'vue';
 import { mapActions } from 'vuex';
 

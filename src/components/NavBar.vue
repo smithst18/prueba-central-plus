@@ -14,7 +14,7 @@
         <NavbarLink v-for="link in links" :key="link.name" :link="link" class="block"/>
     </div>
     <!-- logOut button -->
-    <a class="md:ml-10 md:mb-5 pointer hidden md:block text-sm">
+    <a class="md:ml-10 md:mb-5 pointer hidden md:block text-sm opacity-50 hover:opacity-100">
       Cerrar sesion  
     </a>
     <!-- minicard -->

@@ -54,6 +54,9 @@ export default {
 }
 .in-active{
     opacity: 0.5;
+    &:hover{
+        opacity: 1;
+    }
 }
 router-link{
     div{

@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <button 
+    @click="saveToUpdate(account)"
+    class="text-blue-800">
+    <i class="fa-solid fa-pen-to-square"></i>
+  </button>
+  <!-- <div>
     <button @click="saveToUpdate(account)" class="btn btn-primary text-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
       <i class="fa-solid fa-pen-to-square"></i>
     </button>
@@ -34,7 +39,7 @@
       </div>
     </div>
     
-  </div>
+  </div> -->
 </template>
 
 <script>
