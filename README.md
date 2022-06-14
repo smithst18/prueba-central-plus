@@ -1,24 +1,15 @@
 # prueba-central-plus
 
-## Project setup
+## Project init
 ```
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
+## Packages
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Name | Version 
+--- | --- |
+[`@tailwindcss`](https://github.com/tailwindlabs/tailwindcss) | v3.1.2
+[`@headlessui/vue`](https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-vue) | v1.6.4
+[`@vuex`](https://github.com/vuejs/vuex) | v4.00
