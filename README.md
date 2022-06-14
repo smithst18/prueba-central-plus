@@ -1,7 +1,7 @@
 # Prueba tecnica
 
 ## Comenzando 🚀
-Sistema que permite visualizar el estado de cuentas, balance de assets digitales y gestion de cuentas bancarias de un determinado usuario cuenta con un dashboard un panel de gestion para las cuentas bancarias 
+Sistema que permite visualizar el estado de cuentas, balance de assets digitales y gestion de cuentas bancarias de un determinado usuario cuenta con un dashboard y un panel de gestion para las cuentas bancarias 
 
 
 ### Instalación 🔧
