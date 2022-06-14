@@ -37,7 +37,7 @@
                 <EditButton  
                 :account="account" class="mr-5"/>
                 <DeleteButton 
-                :id="account.id" class=""/> 
+                :id="account.id" /> 
               </td>
             </tr>
           </tbody>
@@ -52,67 +52,66 @@
       </div>
     </div>
   </div>
-  <!-- modal add acount -->
+  
+  <!-- modal add account -->
   <ModalItem :modalActive="modalActive">
-    <!-- content -->
-    <div class="modal-wrapper bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-
-      <div class="modal-wrapper-flex sm:flex sm:items-start ">
-
-        <div class="modal-content text-center mt-3 sm:mt-0 sm:ml-4 sm:text-left w-full">
-          <!-- title -->
-          <div class="flex items-center">
-            <h3 class="text-lg font-medium text-gray-900">
-              Agregar Cuenta
-            </h3>
-          </div>
-
-          <!-- content -->
-          <div class="modal-text mt-4 w-full py-5">
-            <form class="text-start">
-              <div class="mb-3">
-                <label for="accAlias" class="">Alias:</label>
-                <input type="text" class="form-input" id="accAlias" v-model="acct.alias">
-              </div>
-              <div class="mb-3">
-                <label for="accEntity" class="">Entidad:</label>
-                <input type="text" class="" id="accEntity" v-model="acct.entity">
-              </div>
-              <div class="mb-3">
-                <label for="accDocument" class="">Documento de Identidad:</label>
-                <input type="text" class="" id="accDocument" v-model="acct.document">
-              </div>
-              <div class="mb-3">
-                <label for="accNumber" class="">Numero de cuenta:</label>
-                <input type="text" class="" id="accNumber" v-model="acct.acountNumber">
-              </div>
-              <div class="mb-3">
-                <label for="accounttype" class="">Tipo de cuenta:</label>
-                <select class="" aria-label="accountType" v-model="acct.type">
-                  <option value="ahorro">Ahorro</option>
-                  <option value="corriente">Corriente</option>
-                </select>
-              </div>
-            </form>
-          </div>
-
-        </div>
-
+    <template v-slot:icon>
+      <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-400 sm:mx-0 sm:h-10 sm:w-10">
+        <i class="fa-solid fa-floppy-disk text-white"></i>
       </div>
-    </div>
-      <!-- actions -->
-    <div class="modal-actions bg-gray-50 px-4 py-5 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="submit" class="btn-modal 
-        bg-emerald-600 hover:bg-emerald-500 focus:ring-emerald-500"
-        @click="saveNewAcct">
-            Aceptar
-        </button>
-        <button type="button" class="btn-modal 
-        bg-red-600 hover:bg-red-500 focus:ring-red-500 mt-3"
-          @click="toggleModal">
-            Cancelar
-        </button>
-    </div>
+    </template>
+    <!-- modal title content -->
+    <template v-slot:title>
+      <p>Nuevo metodo de pago</p>
+    </template>
+    <!-- modal content body -->
+    <template v-slot:body>
+      <form>
+        <div class="mb-3">
+          <label for="accAlias">Alias:</label>
+          <input type="text" id="accAlias" v-model="acct.alias">
+        </div>
+        <div class="mb-3">
+          <label for="accEntity">Entidad:</label>
+          <input type="text" id="accEntity" v-model="acct.entity">
+        </div>
+        <div class="mb-3">
+          <label for="accDocument">Documento de Identidad:</label>
+          <input type="text" id="accDocument" v-model="acct.document">
+        </div>
+        <div class="mb-3">
+          <label for="accNumber">Numero de cuenta:</label>
+          <input type="text" id="accNumber" v-model="acct.acountNumber">
+        </div>
+        <div class="mb-3">
+          <label for="accounttype">Tipo de cuenta:</label>
+          <select class="" aria-label="accountType" v-model="acct.type">
+            <option value="ahorro">Ahorro</option>
+            <option value="corriente">Corriente</option>
+          </select>
+        </div>
+        <div v-if="errors && errors.length > 0">
+          <ul>
+            <li 
+              class="text-red-300 text-sm py-2 bg-gray-50 rounded-lg"
+              v-for="error in errors" :key="error">
+              {{error}}
+            </li>
+          </ul>
+        </div>
+      </form>
+    </template>
+    <!-- modal action buttons -->
+    <template v-slot:actions>
+      <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-emerald-600 text-base font-medium text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 sm:w-auto sm:text-sm" 
+      @click="saveNewAcct">
+        Guardar
+      </button>
+      <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-400 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" 
+      @click="toggleModal">
+        Cancelar
+      </button>
+    </template>
   </ModalItem>
 
 </template>
@@ -121,7 +120,7 @@
 import { defineAsyncComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
 import { randomId } from '@/helpers/randomNum';
-
+import { validateForm } from '@/helpers/validations';
 
 export default{
   name: 'DataTable',
@@ -136,6 +135,7 @@ export default{
         "type":'',
       },
       modalActive:false,
+      errors: [],
     }
   },
   components:{
@@ -153,29 +153,34 @@ export default{
       this.modalActive = !this.modalActive
     },
     saveNewAcct(){
-      let newAcct = {
-        "id": randomId(),
-        "alias":this.acct.alias,
-        "entity":this.acct.entity,
-        "document":this.acct.document,
-        "acountNumber":this.acct.acountNumber,
-        "type":this.acct.type,
+      this.errors = validateForm(this.acct);
+      if(this.errors.length < 1){
+        let newAcct = {
+          "id": randomId(),
+          "alias":this.acct.alias,
+          "entity":this.acct.entity,
+          "document":this.acct.document,
+          "acountNumber":this.acct.acountNumber,
+          "type":this.acct.type,
+        };
+        //save the acc
+        this.createAccount(newAcct);
+        //close modal
+        this.modalActive = false;  
+        //reset form
+        this.acct.id = '';
+        this.acct.alias = '';
+        this.acct.entity = '';
+        this.acct.document = '';
+        this.acct.acountNumber = '';
+        this.acct.type = '';    
       }
-      this.createAccount(newAcct);
-      this.acct.id = '';
-      this.acct.alias = '';
-      this.acct.entity = '';
-      this.acct.document = '';
-      this.acct.acountNumber = '';
-      this.acct.type = '';    
-      //close toggle
-      this.modalActive = false;  
     },
   },
 }
 </script>
 
-<Style lang="scss" scoped>
+<style lang="scss" scoped>
 table th ,table td{
   @apply px-5 py-3 text-sm;
 }
@@ -183,12 +188,10 @@ table th{
   @apply capitalize text-primary;
 }
 form label, form input, form select{
-  @apply block w-full;
+  @apply w-full;
 }
  form input, form select{
   @apply border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-primary;
 }
-form input{
-}
-/* space no wrap en todos los td*/
-</Style>
+
+</style>

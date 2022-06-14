@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .grid div{
     @apply flex items-center;
 }

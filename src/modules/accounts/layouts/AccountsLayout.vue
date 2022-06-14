@@ -11,7 +11,6 @@ import { mapActions } from 'vuex'
 
 export default{
   components:{
-    // este componente puede variar en el futuro
     AccountCard : defineAsyncComponent( () => import('@/modules/home/components/WelcomeCard.vue')),
     DataTable : defineAsyncComponent( () => import('../components/DataTable.vue')),
   },
