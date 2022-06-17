@@ -1,17 +1,28 @@
 <template>
-  <div class="container-fluid main-container bg-secondary rounded p-4 shadow-sm">
-    <!-- title -->
-    <div class="d-flex mb-4">
-      <h5>Transacciones Recientes</h5>
-      <a href="" class="text-decoration-none text-primary ms-auto">Ver todo</a>
+  <div class="h-3/4 md:pt-7">
+    
+    <div class="bg-secondary shadow-sm h-full lg:p-10 p-3 rounded-lg">
+      <!-- title + link -->
+      <div class="flex mb-10">
+        <p class="text-sm">
+          Transaciones recientes
+        </p>
+        <a href="#" class="text-primary ml-auto text-xs hover:decoration-primary hover:underline">
+          Ver todo
+        </a>
+      </div>
+      <!-- transactions  -->
+      <div class="h-3/4 overflow-y-auto scroll scroll-smooth">
+        <TransactionItem 
+          v-for="transaction in transactions" 
+          :key="transaction.id" 
+          :transaction="transaction"
+        />
+      </div>
+      <div class="h-auto text-right">
+        <ActionButton/>
+      </div>
     </div>
-    <!-- transacion item -->
-    <div class="container-fluid" v-for="transaction in transactions" :key="transaction.id">
-      <TransactionItem :transaction="transaction"/>
-    </div>
-    <button class="add-button btn btn-primary text-secondary fs-1 shadow-sm">
-      +
-    </button>
   </div>
 </template>
 
@@ -22,6 +33,7 @@ import { mapState } from 'vuex';
 export default {
   components:{
     TransactionItem: defineAsyncComponent(() => import("../components/TransactionItem.vue")),
+    ActionButton: defineAsyncComponent(() => import("../components/ActionButton.vue")),
   },
   computed:{
     ...mapState('homeModule',['transactions'])
@@ -30,10 +42,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-container{
-  position:relative;
-  height: calc(100% - 25% - 1.5rem);
-}
 .add-button{
   border-radius: 100%;
   bottom: 20px;

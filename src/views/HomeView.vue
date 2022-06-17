@@ -1,18 +1,15 @@
 <template>
-<div class="container-fluid">
-  <div class="row py-3">
-    <div class="col-md-2 col-sm-12">
-      <NavBar />
-    </div>
-    <div class="col-md-10 col-sm-12 container-rout">
-      <router-view />
-    </div>
+  <div class="md:flex md:p-3 md:h-screen">
+    <!-- principal navbar -->
+    <NavBar />
+    <!-- <router-view/> -->
+    <div class="md:ml-5 md:w-full md:flex">
+     <router-view />
+    </div> 
   </div>
-</div>
 </template>
 
 <script>
-// @ is an alias to /src
 import { defineAsyncComponent } from 'vue';
 import { mapActions } from 'vuex';
 
@@ -31,8 +28,4 @@ export default {
 </script>
 
 <style lang="scss">
-
-.container-rout{
-  height: calc(100vh - 3rem);
-}
 </style>

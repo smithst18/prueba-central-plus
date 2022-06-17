@@ -1,24 +1,19 @@
-# prueba-central-plus
+# Prueba tecnica
 
-## Project setup
+## Comenzando 🚀
+Sistema que permite visualizar el estado de cuentas, balance de assets digitales y gestion de cuentas bancarias de un determinado usuario cuenta con un dashboard y un panel de gestion para las cuentas bancarias 
+
+
+### Instalación 🔧
 ```
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
 
-### Compiles and minifies for production
 ```
-npm run build
-```
+## Construido con 🛠️
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* [Vuejs](https://github.com/vuejs/) -  framework web usado
+* [Vuex](https://github.com/vuejs/vuex) - libreria utilizada para el manejo global del estado de la aplicacion
+* [Tailwindcss](https://github.com/tailwindlabs/tailwindcss) - framework de css para contruir de manera rapida la interface de usuario
+* [Headless Ui](https://github.com/tailwindlabs/headlessui) - unstyled components para integrar con tailwindcss

@@ -1,16 +1,18 @@
 <template>
-  <div class="d-flex align-items-center mb-5" v-if="transaction">
-    <div class="d-flex align-items-center">
-      <img :src="imgSrc" height="25" width="25"  class="profile-picture img-fluid rounded-circle me-2" alt="">
-      <div class="text-start">
-        <p class="text-capitalize">{{this.transaction.description}}</p>
-        <p class="text-muted">{{this.transaction.code}}</p>
+  <div class="flex mb-10" v-if="transaction">
+    <!-- transaction type / transaction id -->
+    <div class="flex items-center">
+      <img :src="imgSrc" height="35" width="35"  class="mr-3" alt="icon-transaction">
+      <div>
+        <p class="capitalize  text-sm"> {{this.transaction.description}} </p>
+        <p class=" text-xs"> {{this.transaction.code}} </p>
       </div>
     </div>
-    <div class="d-flex align-items-center ms-auto">
-      <div class="text-end">
-        <p>{{this.transaction.mount}} <span>{{this.transaction.currency}}</span></p>
-        <p class="text-muted">{{this.transaction.date}}</p>
+    <!-- quantitys date -->
+    <div class="ml-auto flex items-center">
+      <div>
+        <p class="text-sm text-right">{{this.transaction.mount}} <span>{{this.transaction.currency}}</span></p>
+        <p class="text-xs">{{this.transaction.date}}</p>
       </div>
     </div>
   </div>
@@ -30,11 +32,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-  margin:-2.5% 0;
-  font-size:11px !important;
-  .text-muted{
-    font-size:8px !important;
-  }
-}
 </style>

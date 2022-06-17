@@ -21,7 +21,6 @@ export const deleteAccount = ({commit},id) => {
 
 
 export const updateAccount = ({commit}, updateAccount) => {
-  console.log(updateAccount)
 
   updateStorageAccount(updateAccount);
   commit('updateAccount',updateAccount);

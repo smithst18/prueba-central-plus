@@ -1,112 +1,76 @@
 <template>
-  <nav 
-    class="navbar navbar-expand-md d-flex flex-md-column  flex-row justify-content-center bg-primary shadow-sm rounded " 
-    id="sidebard">
-    
-    <div class="navbar-brand mt-md-5 text-center w-75">
-      <img src="@/assets/logo.svg" alt="central +" class="img-fluid d-inline-block me-4 me-md-0">
-
-      <button type="button" class="navbar-toggler border-0 order-1" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="md:flex md:flex-col bg-primary text-secondary text-xs md:w-1/5 md:h-full shadow-md md:rounded-lg sticky  top-0">
+    <!-- toggle button  + logo -->
+    <div class="lg:px-10 md:py-10 md:block p-5 flex items-center">
+      
+      <img src="@/assets/logo.svg" alt="central +" class="pointer">
+      <div class="mx-auto">
+        <i :class="toggleIcon" @click="changeIcon()"></i>
+      </div>
     </div>
-
-    <div class="collapse navbar-collapse  w-100 order-2 rounded" id="nav">
-      <ul class="navbar-nav d-flex flex-column mt-5 w-100 text-white mb-auto align-items-center text-center text-md-start">
-        <li class="nav-item w-75">
-          <router-link  to="/" class="nav-link">
-            <i class="fa-solid fa-house me-2"></i> 
-            <span>Home</span>
-          </router-link>
-        </li>
-        <li class="nav-item w-75">
-          <router-link to="/home/accounts" class="nav-link">
-            <i class="fa-solid fa-building-columns me-2"></i>
-            <span>Metodos de pago</span>
-          </router-link>
-        </li>
-        <li class="nav-item w-75 d-block d-lg-none">
-          <a href="#" class="nav-link">
-            <i class="fa-solid fa-right-from-bracket me-2"></i>
-            <span class="me-2">Cerrar Sesion</span>
-          </a>
-        </li>
-      </ul>
+    <!-- links -->
+    <div 
+      class="md:mb-auto md:mt-16 md:z-auto md:static md:opacity-100 md:pl-0 pl-7  absolute bg-primary w-full left-0 opacity-0 top-[-400px] transition-all ease-out duration-700 md:transition-none" id="collapse">
+        <NavbarLink v-for="link in links" :key="link.name" :link="link" class="block"/>
     </div>
-
-    <a class="w-100 text-center order-3 text-decoration-none text-secondary opacity-75 mb-4 d-lg-block d-none pointer">
-      Cerrar Session
+    <!-- logOut button -->
+    <a class="md:ml-10 md:mb-5 pointer hidden md:block text-sm opacity-50 hover:opacity-100">
+      Cerrar sesion  
     </a>
-
-    <div class="w-100 d-flex justify-content-center order-last">
-      <div class="user-container d-lg-flex align-items-center bg-white d-none d-lg-inline-block">
-        <img src="https://github.com/mdo.png" class="profile-picture img-fluid rounded-circle  ms-2 me-3">
-        <div class="textos">
-          <p class="w-100">
+    <!-- minicard -->
+    <div class="p-3 hidden lg:block">
+      <div class="border flex items-center bg-secondary rounded-lg p-2 ">
+        <img src="https://github.com/mdo.png" class="rounded-full h-10 w-10 mr-3">
+        <div>
+          <div class="text-black mb-1 text-sm">
             {{user.name +' '+ user.lastName}}
-          </p>
-          <p class="text-muted">
+          </div>
+          <div class="text-zinc-400 text-xs">
             {{user.email}}
-          </p>
+          </div>
         </div>
       </div>
     </div>
-    
   </nav>
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
 import { mapState } from 'vuex'
+
 export default {
+  data(){
+    return{
+      links:[
+        { to: 'dashboard', name:'Home',icon:"fa-solid fa-house" },
+        { to: 'accounts', name:'Metodos de Pago',icon:"fa-solid fa-building-columns"},
+      ],
+      toggleIcon:'fa-solid fa-bars md:hidden block text-4xl',
+    }
+  },
+  components:{
+    NavbarLink: defineAsyncComponent(() => import("./NavbarLink")),
+  },
   computed:{
     ...mapState(["user"]),
+  },
+  methods:{
+    changeIcon(){
+      let collapse = document.querySelector('#collapse')
+
+      this.toggleIcon === 'fa-solid fa-bars md:hidden block text-4xl' 
+      ? (this.toggleIcon = 'fa-solid fa-xmark md:hidden block text-4xl', 
+          collapse.classList.add('top-[68px]'),
+          collapse.classList.add('opacity-100'))
+      : (this.toggleIcon = 'fa-solid fa-bars md:hidden block text-4xl', 
+          collapse.classList.remove('top-[68px]'),
+          collapse.classList.remove('opacity-100'));
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.navbar{
-  height: 100%;
-  width:100%;
-}
-@media (max-width: 750px) { 
-    .navbar{
-    border-radius: 8px;
-    width: 100%;
-    background-color:#29BB89; 
-    height:auto;
-  }
-  *{
-    font-size: 12px;
-  }
-}
-.nav-link{
-  font-size:14px;
-  transition: 0.2s all ease-in;
-  color:inherit;
-  &:hover{
-    background-color:lighten($color: #29BB89, $amount: 5%);
-    transition: 0.2s all ease-in;
-  }
-  // &:active{
-  //   span{
-  //     position:absolute;
-  //     background-color:#ffffff;
-  //   }
-  // }
-}
-.user-container{  
-  border-radius: 8px;
-  height: 60px;
-  width: 90%;
-  p{
-    word-break: break-all;
-  }
-}
-.profile-picture{
-  width:3rem;
-  height:3rem;
-}
 p{
   margin:-2.5% 0;
 }
