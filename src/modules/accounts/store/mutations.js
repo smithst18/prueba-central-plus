@@ -16,5 +16,14 @@ export const updateAccount = (state, updateAccount) => {
 
   const itemToUpdate = state.accounts.findIndex( (e) => e.id == updateAccount.id );
   //change the data on the item to update position of the array
-  state.accounts[itemToUpdate] = updateAccount;
+  console.log({updateAccount,itemToUpdate});
+
+  state.accounts[itemToUpdate] = {
+    id: updateAccount.id,
+    alias: updateAccount.alias,
+    entity: updateAccount.entity,
+    document: updateAccount.document,
+    acountNumber: updateAccount.acountNumber,
+    type: updateAccount.type,
+  };
 } 

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-3/4 md:pt-7" v-if="accounts">
+  <div class="h-3/4 md:pt-7" v-if="allAccounts">
     <div class="shadow-sm h-full rounded-lg bg-secondary md:p-10 p-3">
       <div class="mb-16 flex p-5 md:p-0">
         <h5 class="text-base">
@@ -27,7 +27,7 @@
           </thead>
 
           <tbody>
-            <tr class="text-center" v-for="account in accounts" :key="account.id">
+            <tr class="text-center" v-for="account in allAccounts" :key="account.id">
               <td>{{account.alias}}</td>
               <td>{{account.entity}}</td>
               <td>{{account.document}}</td>
@@ -46,7 +46,7 @@
       <!-- items for mobile -->
       <div class="block md:hidden">
         <AccountItem 
-        v-for="account in accounts" :key="account.id" 
+        v-for="account in allAccounts" :key="account.id" 
         :account="account"
         class="mb-3"/>
       </div>
@@ -118,7 +118,7 @@
 
 <script>
 import { defineAsyncComponent } from 'vue';
-import { mapState, mapActions } from 'vuex';
+import { mapActions,mapGetters } from 'vuex';
 import { randomId } from '@/helpers/randomNum';
 import { validateForm } from '@/helpers/validations';
 
@@ -145,7 +145,7 @@ export default{
     ModalItem:defineAsyncComponent(() => import('./ModalItem.vue')),
   },
   computed:{
-    ...mapState('accountModule',['accounts'])
+    ...mapGetters('accountModule',['allAccounts'])
   },
   methods:{
     ...mapActions('accountModule',['createAccount']),
